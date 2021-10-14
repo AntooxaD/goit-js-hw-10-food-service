@@ -10,6 +10,12 @@ const Theme = {
 refs.switch.addEventListener('change', setClassList);
 refs.switch.addEventListener('change', setLocalStorage);
 
+document.body.classList.add(localStorage.getItem('theme') === null
+  ? Theme.LIGHT
+  : localStorage.getItem('theme'),
+)
+console.log(localStorage)
+
 function setClassList(e) {
   const check = refs.switch.checked;
 
